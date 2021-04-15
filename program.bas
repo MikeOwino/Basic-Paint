@@ -1,15 +1,79 @@
-10 ARRAY c
-20 c[1] = "red"
-30 c[2] = "blue"
-40 c[3] = "yellow"
-50 c[4] = "cyan"
-60 c[5] = "blue"
-70 c[6] = "magenta"
-75 c[7] = "green"
-77 c[8] = "orange"
-80 REM start draw loop
-90 a = rand(50) - 1
-100 b = rand(50) - 1
-110 PLOT a, b, c[rand(8)]
-120 PAUSE 5
-130 GOTO 90
+0 CLS
+1 PRINT "Welcome to Basic Paint. Draw by clicking on the grid. Change colors using the palette."
+120000 REM Change TRUE to FALSE and run to disable grid (warning: will clear drawing!)
+120001 REM I would have made it 33x32 to make a 32x32 drawing area, but it seems like
+120002 REM the display is "diagonalized" for some reason. 
+9 DISPLAY 32,32,TRUE
+10 PLOT 0,0,"red"
+11 PLOT 0,1,"green"
+12 PLOT 0,2,"yellow"
+13 PLOT 0,3,"blue"
+14 PLOT 0,4,"pink"
+15 PLOT 0,5,"purple"
+16 PLOT 0,6,"magenta"
+17 PLOT 0,7,"lime"
+18 PLOT 0,8,"orange"
+19 PLOT 0,9,"orangered"
+20 PLOT 0,10,"cyan"
+21 PLOT 0,11,"gray"
+22 PLOT 0,12,"teal"
+23 PLOT 0,13,"goldenrod"
+24 PLOT 0,14,"black"
+25 PLOT 0,15,"white"
+26 PLOT 0,16,"indigo"
+27 PLOT 0,17,"deeppink"
+28 PLOT 0,18,"greenyellow"
+29 PLOT 0,19,"navy"
+30 PLOT 0,20,"mediumspringgreen"
+31 PLOT 0,21,"brown"
+32 PLOT 0,22,"crimson"
+33 PLOT 0,23,"steelblue"
+34 PLOT 0,24,"royalblue"
+35 PLOT 0,25,"aquamarine"
+36 PLOT 0,26,"mediumvioletred"
+37 PLOT 0,27,"limegreen"
+38 PLOT 0,28,"maroon"
+39 PLOT 0,29,"darkred"
+40 PLOT 0,30,"darkturquoise"
+41 PLOT 0,31,"olive"
+50 PAUSE 1000
+59 C = "black"
+60 X = GETCLICK()
+63 IF X = "" THEN GOTO 60
+64 IF X[0] = 0 THEN GOTO 90
+70 PLOT X[0],X[1],C
+80 GOTO 60
+90 T = X[1]
+91 IF T = 0 THEN C = "red"
+92 IF T = 1 THEN C = "green"
+93 IF T = 2 THEN C = "yellow"
+94 IF T = 3 THEN C = "blue"
+95 IF T = 4 THEN C = "pink"
+96 IF T = 5 THEN C = "purple"
+97 IF T = 6 THEN C = "magenta"
+98 IF T = 7 THEN C = "lime"
+99 IF T = 8 THEN C = "orange"
+100 IF T = 9 THEN C = "orangered"
+101 IF T = 10 THEN C = "cyan"
+102 IF T = 11 THEN C = "gray"
+103 IF T = 12 THEN C = "teal"
+104 IF T = 13 THEN C = "goldenrod"
+105 IF T = 14 THEN C = "black"
+106 IF T = 15 THEN C = "white"
+107 IF T = 16 THEN C = "indigo"
+108 IF T = 17 THEN C = "deeppink"
+109 IF T = 18 THEN C = "greenyellow"
+110 IF T = 19 THEN C = "navy"
+111 IF T = 20 THEN C = "mediumspringgreen"
+112 IF T = 21 THEN C = "brown"
+113 IF T = 22 THEN C = "crimson"
+114 IF T = 23 THEN C = "steelblue"
+115 IF T = 24 THEN C = "royalblue"
+116 IF T = 25 THEN C = "aquamarine"
+117 IF T = 26 THEN C = "mediumvioletred"
+118 IF T = 27 THEN C = "limegreen"
+119 IF T = 28 THEN C = "maroon"
+120 IF T = 29 THEN C = "darkred"
+121 IF T = 30 THEN C = "darkturquoise"
+122 IF T = 31 THEN C = "olive"
+130 GOTO 60
